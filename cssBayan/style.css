@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: 'Open Sans', 'Verdana', sans-serif;
+    background: #f5f5eb;
+}
+
+.body__wrapper{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.bayan {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    color: blue;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.bayan:hover {
+    color: black;
+}
+
+.toggle-box {
+    display: none;
+}
+
+.toggle-box + label {
+    display: block;
+    cursor: pointer;
+    padding: 10px 0px;
+    margin-bottom: 0;
+    border-bottom: 2px solid #e6e6e5;
+}
+.toggle-box:first-child + label{
+    border-top: 2px solid #e6e6e5;
+}
+
+label a, a:hover {color: #ee4242;}
+.toggle-box + label:hover{opacity: 0.8;} /*при наведении на панель*/
+
+.toggle-box + label:active { /*при нажатии на панель*/
+    color: blue;
+}
+ 
+.toggle-box + label + div { /* содержание блоков скрыто */
+    display: none;
+}
+
+  /* при обработке флажка (checkbox) показываем блок с содержанием */
+ 
+.toggle-box:checked + label + div {
+    display: block;
+}
+
+.box img{
+    height: auto;
+    margin: 0 auto;
+  }
