@@ -4,23 +4,19 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 10px;
-}
-
 body{
-    font-size: 1.6rem;
+    font-size: 1.0rem;
     font-family: 'Open Sans', 'Verdana', sans-serif;
     background: #f5f5eb;
 }
 
 .body__wrapper{
-    max-width: 600px;
+    max-width: 60vw;
     margin: 0 auto;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     font-weight: 700;
     text-align: left;
 }
@@ -30,7 +26,7 @@ h1 {
     margin: 0 auto;
     padding: 0;
     color: blue;
-    font-size: 1.6rem;
+    font-size: 1.0rem;
     font-weight: 700;
 }
 
@@ -38,39 +34,124 @@ h1 {
     color: black;
 }
 
+.bayan__item-container{
+    cursor: pointer;
+}
+
 .toggle-box {
     display: none;
+}
+
+.lable-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lable-mark {
+    display: none;
+    font-size: 2.0rem;
+    transition: all 0.5s;
+}
+
+.bayan:hover .lable-mark {
+    display: block;
 }
 
 .toggle-box + label {
     display: block;
     cursor: pointer;
-    padding: 10px 0px;
+    padding: 15px 0;
+    line-height: 2.7rem;
     margin-bottom: 0;
-    border-bottom: 2px solid #e6e6e5;
-}
-.toggle-box:first-child + label{
     border-top: 2px solid #e6e6e5;
 }
 
-label a, a:hover {color: #ee4242;}
-.toggle-box + label:hover{opacity: 0.8;} /*при наведении на панель*/
+.toggle-box:last-child + label{
+    border-bottom: 2px solid #e6e6e5;
+}
 
 .toggle-box + label:active { /*при нажатии на панель*/
     color: blue;
+    opacity: 0.7;
+}
+
+.toggle-box + label:active + div img{ /*при нажатии на панель*/
+    opacity: 0.7;
 }
  
 .toggle-box + label + div { /* содержание блоков скрыто */
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.toggle-box + label + div img {
+    transform: scale(0);
+    transition: all 0.5s;
 }
 
   /* при обработке флажка (checkbox) показываем блок с содержанием */
  
+.toggle-box:checked + label {
+    color: black;
+}  
+
 .toggle-box:checked + label + div {
-    display: block;
+    max-height: 45vh;
+    transition: max-height 0.5s;
+}
+
+.toggle-box:checked + label + .box img {
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+.toggle-box:checked + label div .lable-mark{
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+/* при наведении*/
+label:hover {
+    color: black;
+}  
+
+label:hover + div {
+    max-height: 45vh;
+    transition: all 0.5s;
+}
+
+label:hover + .box img {
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+label:hover div .lable-mark{
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+/* ----------------------  */
+.box {
+    display: flex;
+    justify-content: center;
+    transition: max-height 0.5s;
 }
 
 .box img{
-    height: auto;
+    max-height: 100%;
     margin: 0 auto;
   }
+
+  .box:hover{
+    max-height: 100%;
+    transition: max-height 0.5s;
+}
+.toggle-box + label + div:hover {
+    max-height: 45vh;
+    transition: max-height 0.5s;
+} 
+
+  .toggle-box + label + .box:hover img {
+    transform: scale(1);
+} 
