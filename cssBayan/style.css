@@ -8,6 +8,7 @@ body{
     font-size: 1.0rem;
     font-family: 'Open Sans', 'Verdana', sans-serif;
     background: #f5f5eb;
+    overflow: scroll;
 }
 
 .body__wrapper{
